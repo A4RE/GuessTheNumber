@@ -47,6 +47,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		541873682ACCAE9200A26774 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				85373CBF2AC9CC62005704E9 /* GameViewController.swift */,
+				541873602ACC22B000A26774 /* SelectTimeViewController.swift */,
+				541873622ACC22F600A26774 /* SettingsTableViewController.swift */,
+				541873662ACCA21900A26774 /* RecordViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		541873692ACCAEAD00A26774 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8547BDB92AC9EAC7008AE8D1 /* Game.swift */,
+				541873642ACC2DA000A26774 /* Settings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		85C299C42AC8ACA2005DB77F = {
 			isa = PBXGroup;
 			children = (
@@ -66,18 +86,14 @@
 		85C299CF2AC8ACA2005DB77F /* GuessTheNumber */ = {
 			isa = PBXGroup;
 			children = (
+				541873692ACCAEAD00A26774 /* Models */,
+				541873682ACCAE9200A26774 /* ViewControllers */,
 				85C299D02AC8ACA2005DB77F /* AppDelegate.swift */,
 				85C299D22AC8ACA2005DB77F /* SceneDelegate.swift */,
 				85C299D62AC8ACA2005DB77F /* Main.storyboard */,
 				85C299D92AC8ACA4005DB77F /* Assets.xcassets */,
 				85C299DB2AC8ACA4005DB77F /* LaunchScreen.storyboard */,
 				85C299DE2AC8ACA4005DB77F /* Info.plist */,
-				85373CBF2AC9CC62005704E9 /* GameViewController.swift */,
-				8547BDB92AC9EAC7008AE8D1 /* Game.swift */,
-				541873602ACC22B000A26774 /* SelectTimeViewController.swift */,
-				541873622ACC22F600A26774 /* SettingsTableViewController.swift */,
-				541873642ACC2DA000A26774 /* Settings.swift */,
-				541873662ACCA21900A26774 /* RecordViewController.swift */,
 			);
 			path = GuessTheNumber;
 			sourceTree = "<group>";
