@@ -8,8 +8,9 @@
 import UIKit
 
 class RecordViewController: UIViewController {
-
+    // MARK: - PROPERTIES
     @IBOutlet weak var recordLabel: UILabel!
+    // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         let record = UserDefaults.standard.integer(forKey: KeysUserDefaults.gameRecord)
@@ -20,11 +21,8 @@ class RecordViewController: UIViewController {
             recordLabel.text = "Рекорд не установлен"
         }
     }
-    
+    // MARK: - ACTIONS
     @IBAction func closeVC(_ sender: Any) {
         dismiss(animated: true)
     }
-    
-
-
 }

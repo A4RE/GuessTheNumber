@@ -9,6 +9,7 @@ import UIKit
 
 class SelectTimeViewController: UIViewController {
     
+    // MARK: - PROPERTIES
     var data: [Int] = []
 
     @IBOutlet weak var tableView: UITableView!{
@@ -17,14 +18,12 @@ class SelectTimeViewController: UIViewController {
             tableView?.delegate = self
         }
     }
-    
+    // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-
 }
-
+// MARK: - EXTENSION
 extension SelectTimeViewController: UITableViewDataSource, UITableViewDelegate {
 
     

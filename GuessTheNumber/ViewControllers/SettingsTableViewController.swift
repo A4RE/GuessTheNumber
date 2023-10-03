@@ -9,20 +9,22 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
     
+    // MARK: - PROPERTIES
     @IBOutlet weak var switchTimer: UISwitch!
     
     @IBOutlet weak var timeGameLabel: UILabel!
-    
+    // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadSettings()
     }
-    
+    // MARK: - ACTIONS
     @IBAction func changeTimerState(_ sender: UISwitch) {
         Settings.shared.currentSetting.timerState = sender.isOn
     }
@@ -31,7 +33,7 @@ class SettingsTableViewController: UITableViewController {
         Settings.shared.resetSettings()
         loadSettings()
     }
-    
+    // MARK: - FUNCTIONS
     func loadSettings() {
         timeGameLabel.text =  "\(Settings.shared.currentSetting.timeForGame) сек"
         switchTimer.isOn = Settings.shared.currentSetting.timerState

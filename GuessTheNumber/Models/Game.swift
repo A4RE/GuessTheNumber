@@ -6,20 +6,21 @@
 //
 
 import Foundation
-
+// MARK: - ENUM
 enum GameStatuses {
     case start
     case win
     case lose
 }
-
+// MARK: - CLASS
 class Game {
-    
+    // MARK: - STRUCT
     struct Item {
         var title: String
         var isFound: Bool = false
         var isError: Bool = false
     }
+    // MARK: - PROPERTIES
     var isNewRecord: Bool = false
     private let data = Array(1...99)
     var status: GameStatuses = .start {
@@ -49,9 +50,9 @@ class Game {
     }
     private var timer: Timer?
     private var countItems: Int
-    
     var nextItem: Item?
     private var updateTimer:((GameStatuses, Int)->())
+    // MARK: - INITIALISATION
     init(countItems: Int, updateTimer: @escaping (_ status: GameStatuses, _ seconds: Int) -> ()) {
         self.countItems = countItems
         self.timeForGame = Settings.shared.currentSetting.timeForGame
@@ -60,6 +61,7 @@ class Game {
         setUpGame()
     }
     
+    // MARK: - FUNCTIONS
     private func setUpGame() {
         isNewRecord = false
         var digits = data.shuffled()
@@ -108,7 +110,7 @@ class Game {
         setUpGame()
     }
 }
-
+// MARK: - EXTENSION
 extension Int {
     func secondsToString() -> String {
         let minutes = self / 60

@@ -9,18 +9,19 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    // MARK: - PROPERTIES
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var nextDigit: UILabel!
     @IBOutlet var buttons: [UIButton]!
-    
     @IBOutlet weak var newGameButton: UIButton!
+    
     lazy var game = Game(countItems: buttons.count) { [weak self] status, time in
         guard let self = self else { return }
         self.timerLabel.text = time.secondsToString()
         self.updateInfoGame(with: status)
     }
-    
+    // MARK: - LIFECYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpScreen()
@@ -31,6 +32,9 @@ class GameViewController: UIViewController {
         super.viewWillDisappear(animated)
         game.stopGame()
     }
+    
+    // MARK: - ACTIONS
+    
     
     @IBAction func firstButtonPress(_ sender: UIButton) {
         guard let buttonIndex = buttons.firstIndex(of: sender) else {
@@ -47,6 +51,7 @@ class GameViewController: UIViewController {
         setUpScreen()
     }
     
+    // MARK: - FUNCTIONS
     private func setUpScreen() {
         for index in game.items.indices {
             buttons[index].setTitle(game.items[index].title, for: .normal)
@@ -79,6 +84,7 @@ class GameViewController: UIViewController {
         
         updateInfoGame(with: game.status)
     }
+    
     private func updateInfoGame(with status: GameStatuses) {
         switch status {
         case .start:
